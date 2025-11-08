@@ -1,33 +1,31 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "./Icons";
+import { MoonIcon, SunIcon } from './Icons';
+
 
 const ThemeSwitch = () => {
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+    const { theme, resolvedTheme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
-  if (!mounted) return null;
 
-  return (
-    <button
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      style={{
-        background: "transparent",
-        border: "none",
-        cursor: "pointer",
-        color: "var(--foreground)", 
-      }}
-      aria-label="Toggle Theme"
-    >
-      {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
-    </button>
-  );
-};
+    if(!mounted){
+        return null;
+    }
+
+
+    return (
+        <>
+            <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+                {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+            </button>
+        </>
+    )
+}
 
 export default ThemeSwitch;
