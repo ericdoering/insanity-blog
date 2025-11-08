@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Fira_Code } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import { Provider } from "./utils/Provider";
+import { Providers } from "./utils/Provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,19 +23,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html suppressHydrationWarning lang="en">
       <body
         className={`${firaCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}
       >
-        <Provider>
+        <Providers>
           <Navbar />
           <main className="mx-auto max-w-5xl px-6">{children}</main>
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
-}
+};

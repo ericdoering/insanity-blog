@@ -7,10 +7,12 @@ interface Props {
     children: React.ReactNode
 }
 
-export const Provider = ({ children }: Props) => {
+export const Providers = ({ children }: Props) => {
     return (
         <>
-            <ThemeProvider attribute="class">{children}</ThemeProvider>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                    {children}
+                </ThemeProvider>
         </>
     )
 }
