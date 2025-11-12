@@ -18,7 +18,6 @@ const ThemeSwitch = () => {
         return null;
     }
 
-
     return (
         <>
             <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>

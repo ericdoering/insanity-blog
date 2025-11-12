@@ -9,7 +9,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const firaCode = Fira_Code({ subsets: ["latin"]})
+const firaCode = Fira_Code({ subsets: ["latin"] });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -27,9 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html
+      suppressHydrationWarning
+      lang="en"
+    >
       <body
-        className={`${firaCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}
+        className={`${firaCode.className} h-full`}
       >
         <Providers>
           <Navbar />
@@ -38,4 +41,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-};
+}
