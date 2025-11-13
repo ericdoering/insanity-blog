@@ -32,7 +32,7 @@ export default function RootLayout({
       lang="en"
     >
       <body
-        className={`${firaCode.className} h-full`}
+        className={`${firaCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}
       >
         <Providers>
           <Navbar />
